@@ -23,7 +23,7 @@ public class Message {
         this.tag = tag;
     }
     public String getAuthorName(){
-        return author!= null?author.getUsername():"<none>";
+        return author!= null?author.getUsername():"none";
     }
     public User getAuthor() {
         return author;
