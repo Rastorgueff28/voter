@@ -28,7 +28,7 @@ public class MainController {
     private String uploadPath;
 
     @GetMapping("/")
-    public String greeting(String name, Map<String, Object> model) {
+    public String greeting( Map<String, Object> model) {
 
         return "greeting";
     }
@@ -47,7 +47,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/main")
     public String add(
             @AuthenticationPrincipal User user,
             @RequestParam String text,
