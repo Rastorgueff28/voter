@@ -32,7 +32,7 @@
         <div class="col-sm-6">
             <input type="password" name="password2"
                    class="form-control ${(password2Error??)?string('is-invalid','')}"
-                   value ="<#if user??>${user.username}</#if>"
+                   value="<#if user??>${user.username}</#if>"
                    placeholder="Repeat password"/>
             <#if password2Error??>
                     <div class="invalid-feedback">
@@ -46,7 +46,7 @@
         <div class="col-sm-6">
             <input type="email" name="email"
                    class="form-control ${(emailError??)?string('is-invalid','')}"
-                   value ="<#if user??>${user.email}</#if>"
+                   value="<#if user??>${user.email}</#if>"
                    placeholder="Email"/>
             <#if emailError??>
                     <div class="invalid-feedback">
@@ -55,6 +55,15 @@
             </#if>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="g-recaptcha" data-sitekey="6Ldu6X8UAAAAAJtYhoRYq0z5H6r8PCo7v94NWODq"></div>
+        <#if captchaError??>
+    <div class="alert alert-danger" role="alert">
+        ${captchaError}
+    </div>
+        </#if>
+    </div>
+
     </#if>
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
    <#if !isRegisterForm><a href="/registration">Add new User</a></#if>
